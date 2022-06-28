@@ -39,53 +39,5 @@ class User {
             return { success: false, msg:"DB 에러"};
         }
     }
-
-    async art_register() {
-        try {
-            const artInfo = this.body;
-            const ipfsVal = this.ipfsVal;
-            const response = await UserStorage.art_save(artInfo,ipfsVal);
-            return response;
-        } catch(err) {
-            return { success: false, msg:"DB 에러"};
-        }
-
-    }
-
-    async personal_info() {
-        try {
-            const artInfo1 = this.body;
-            const ipfsVal = this.ipfsVal;
-            const response = await UserStorage.art_save1(artInfo1,ipfsVal);
-            return response;
-        } catch(err) {
-            return { success: false, msg:"DB 에러"};
-        }
-    }
-
-    async author_portfolio_nft() {
-        const body = this.body;
-        console.log(typeof(body));
-        try {
-            const data = await UserStorage.authorPortfolio_nft(body);
-            return {success: true, data};
-        } catch (err) {
-            return { success: false, err };
-        }
-
-    }
-
-    async record_register() {
-        try {
-            const recordInfo = this.body;
-            const response = await UserStorage.record_save(recordInfo);
-            return response;
-        } catch(err) {
-            return { success: false, msg:"DB 에러"};
-        }
-
-    }
-
-
 }
 module.exports = User;  
