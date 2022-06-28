@@ -15,21 +15,16 @@ const upload = multer({ dest: 'uploads/' }) //업로드
 
 
 //라우팅
+
 //GET method
 router.get('/', ctrl.output.root);
+router.get('/login', ctrl.output.login); //로그인
+router.get('/register', ctrl.output.register); //회원가입
 
 
 //POST method
-router.post('/login', ctrl.process.login);
-router.post('/register',ctrl.process.register);
-router.post('/artRegister',upload.single("files"),ctrl.process.artRegister);
-router.post('/personalinfoModification',upload.single("filed"),ctrl.process.personalinfoModification);
-router.post('/author_portfolio_nft',ctrl.process.authorPortfolio_nft);
-router.post('/mintAT', ctrl.process.mintAT);
-router.post('/recordRegister', ctrl.process.recordRegister);
-router.post('/NFT',ctrl.process.NFT);
-router.post('/authors',ctrl.process.author);
-router.post('/mintATBtn',ctrl.process.mintATBtn);
+router.post('/login', ctrl.process.login); // 로그인
+router.post('/register',ctrl.process.register); // 회원가입
 
 
 
