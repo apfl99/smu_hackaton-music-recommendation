@@ -13,7 +13,6 @@ const {request} = require("http");
 const upload = multer({ dest: 'uploads/' }) //업로드
 
 
-
 //라우팅
 
 //GET method
