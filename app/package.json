@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "demon": "^1.4.4",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "eth-price": "^0.1.5",
+    "ethereumjs-tx": "^2.1.2",
+    "exchange-rates-api": "^1.1.0",
+    "express": "^4.17.3",
+    "get-eth-price": "^1.0.0",
+    "ipfs-api": "^26.1.2",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1",
+    "openzeppelin-solidity": "^2.3.0",
+    "request": "^2.88.2",
+    "web3": "^1.7.3"
+  },
+  "name": "ntfartportfolio",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --inspect ./bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "nftartportfolio": "bin/www.js"
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8"
+  }
+}
