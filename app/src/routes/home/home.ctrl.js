@@ -26,7 +26,7 @@ const output = {
     },
     register : (req,res) => {
         res.render("home/register");
-    },
+    }
 };
 
 
