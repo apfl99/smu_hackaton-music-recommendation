@@ -1,33 +1,39 @@
 // 프런트 단의 기능을 구현
 "use strict"
 
-const email = document.querySelector("#email");
-const username = document.querySelector("#username");
+const id = document.querySelector("#id");
 const passwd = document.querySelector("#password");
 const confirmPasswd = document.querySelector("#re-password");
+const username = document.querySelector("#username");
+const email = document.querySelector("#email");
+const number = document.querySelector("#number");
 const registerBtn = document.querySelector("#register_btn");
-const major = document.getElementById('major');
-const birth = document.getElementById('birth');
 
 registerBtn.addEventListener("click",register);
 
 function register() {
-    checkEmailFormat(email.value);
-    checkUsernameFormat(username.value);
+    console.log("Register-js");
+    checkUseridFormat(id.value);
     checkPasswordFormat(passwd.value);
+    checkUsernameFormat(username.value);
+    checkEmailFormat(email.value);
+    checkNumber(number.value);
     checkRePasswordFormat(passwd.value, confirmPasswd.value);
-    checkCheckBox();
+    //checkCheckBox();
+    console.log(id.value+","+passwd.value+","+username.value+","+email.value+","+number.value);
 
-    var checkResult = (checkEmailFormat(email.value) && checkUsernameFormat(username.value) && checkPasswordFormat(passwd.value) && checkRePasswordFormat(passwd.value, confirmPasswd.value) && checkCheckBox() && checkBirth(birth.value));
+    console.log(checkPasswordFormat(passwd.value));
 
+    var checkResult = (checkUseridFormat(id.value) && checkPasswordFormat(passwd.value) && checkUsernameFormat(username.value) && checkEmailFormat(email.value) && checkRePasswordFormat(passwd.value, confirmPasswd.value) && checkNumber(number.value));
+    
 
     if (checkResult) {
         const req = {
+            id: id.value,
             email: email.value,
             username : username.value,
             passwd : passwd.value,
-            major : major.value,
-            birth : birth.value,
+            number : number.value,
         };
 
         //프론트 -> 서버
@@ -51,6 +57,21 @@ function register() {
             console.error("회원가입 중 에러가 발생하였습니다.");
         });
     }
+};
+
+//id check
+function checkUseridFormat(id) {
+  var isTrue;
+
+  if (id.length >= 2 && id.length < 20) {
+    $('#username-message').text(''); //수정
+    isTrue = true;
+  } else {
+    $('#username-message').text('2자 이상, 20자 미만으로 작성해주세요.');
+    isTrue = false;
+  }
+
+  return Boolean(isTrue);
 };
 
 //email check
@@ -123,10 +144,10 @@ function checkCheckBox(check) {
     return Boolean(checked);
 };
   
-function checkBirth(value) {
+function checkNumber(value) {
   var valueCheck = value;
   if( !valueCheck ){
-      $('#birth-message').text('생년월일을 입력해주세요');
+      $('#birth-message').text('전화번호를 입력해주세요'); //수정
       return false;
   }else{
       $('#birth-message').text('');

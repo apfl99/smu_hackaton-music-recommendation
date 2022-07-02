@@ -13,7 +13,7 @@
     Favicons
     =============================================
     -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <!--<link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
@@ -29,7 +29,7 @@
     <link rel="manifest" href="/images/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">-->
     <!--  
     Stylesheets
     =============================================
@@ -61,10 +61,22 @@
       <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="/images/error.jpg">
         <div class="titan-caption">
           <div class="caption-content">
-            <div class="font-alt mb-30 titan-title-size-4">Error 404</div>
-            <div class="font-alt">The requested URL was not found on this server.<br/>That is all we know.
-            </div>
-            <div class="font-alt mt-30"><a class="btn btn-border-w btn-round" href="/">Back to home page</a></div>
+            <input id="id" type="text" name="id" style="color:black;" placeholder="*아이디" >
+            <input id="password" type="password" style="color:black;" name="password" placeholder="*비밀번호" >
+            <input id="re-password" type="password" style="color:black;" name="re-password" placeholder="*비밀번호 확인" >
+            <input id="username" type="text" style="color:black;" name="username" placeholder="*닉네임" >
+            <input id="email" type="email" style="color:black;" name="email" placeholder="*이메일" >
+            <input id="number" type="text" style="color:black;" name="number" placeholder="*전화번호(-없이 입력)" >
+            <br><button id="register_btn" class="button">회원가입</button>
+
+            <br>
+            <hr>
+            <br>
+
+            <input id="l_id" type="text" name="l_id" style="color:black;" placeholder="*아이디" >
+            <input id="l_password" type="password" style="color:black;" name="l_password" placeholder="*비밀번호" >
+            <br><button id="login_btn" class="button">로그인</button>
+            <button id="logout_btn" class="button" display="none" >로그아웃</button>
           </div>
         </div>
       </section>
@@ -86,5 +98,7 @@
     <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="/js/home/plugins.js"></script>
     <script src="/js/home/main.js"></script>
+    <script src="/js/home/register.js"></script>
+    <script src="/js/home/login.js"></script>
   </body>
 </html>

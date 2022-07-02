@@ -3,23 +3,24 @@
  /* ---------------------------------------------- */
 $(document).ready(function() {
     if(window.sessionStorage.getItem('isLogined')){
-        $('#Login').hide();
-        $('#Logout').show();
-        $('#MyPage').show();
+        $('#login_btn').hide();
+        $('#logout_btn').show();
+    }
+    else {
+        $('#logout_btn').hide();
     }
 });
 
 /* ---------------------------------------------- /*
  * Logout -> session -> changeUI
  /* ---------------------------------------------- */
-const logoutBtn = document.querySelector("#Logout");
-
+const logoutBtn = document.querySelector("#logout_btn");
 
 logoutBtn.addEventListener("click", function() {
     window.sessionStorage.clear();
-    $('#Login').show();
-    $('#Logout').hide();
-    $('#MyPage').hide();
+    $('#login_btn').show();
+    $('#logout_btn').hide();
+    //$('#MyPage').hide();
     location.href ='/';
 });
 
@@ -27,7 +28,7 @@ logoutBtn.addEventListener("click", function() {
 /* ---------------------------------------------- /*
  * MyPage
  /* ---------------------------------------------- */
- const MyPageBtn = document.querySelector('#MyPage');
+ /*const MyPageBtn = document.querySelector('#MyPage');
 
  MyPageBtn.addEventListener("click",function(){
     const LoginId = window.sessionStorage.getItem('userId');
@@ -55,7 +56,7 @@ logoutBtn.addEventListener("click", function() {
     .catch((err) => {
         console.error(new Error("서버 에러가 발생하였습니다."));
     });
- })
+ })*/
 
 /* ---------------------------------------------- /*
  * PopUp
@@ -146,12 +147,12 @@ $(document).ready(function() {
          * Set sections backgrounds
          /* ---------------------------------------------- */
 
-        var module = $('.home-section, .module, .module-small, .side-image');
+        /*var module = $('.home-section, .module, .module-small, .side-image');
         module.each(function(i) {
             if ($(this).attr('data-background')) {
                 $(this).css('background-image', 'url(' + $(this).attr('data-background') + ')');
             }
-        });
+        });*/
 
         /* ---------------------------------------------- /*
          * Home section height
@@ -343,12 +344,12 @@ $(document).ready(function() {
             worksgrid_mode = 'fitRows';
         }
 
-        worksgrid.imagesLoaded(function() {
+        /*worksgrid.imagesLoaded(function() {
             worksgrid.isotope({
                 layoutMode: worksgrid_mode,
                 itemSelector: '.work-item'
             });
-        });
+        });*/
 
         $('#filters a').click(function() {
             $('#filters .current').removeClass('current');
@@ -384,12 +385,12 @@ $(document).ready(function() {
          * Post Slider
          /* ---------------------------------------------- */
 
-        if ($('.post-images-slider').length > 0 ) {
+        /*if ($('.post-images-slider').length > 0 ) {
             $('.post-images-slider').flexslider( {
                 animation: "slide",
                 smoothHeight: true,
             });
-        }
+        }*/
 
 
         /* ---------------------------------------------- /*
@@ -495,9 +496,9 @@ $(document).ready(function() {
          * Blog masonry
          /* ---------------------------------------------- */
 
-        $('.post-masonry').imagesLoaded(function() {
+        /*$('.post-masonry').imagesLoaded(function() {
             $('.post-masonry').masonry();
-        });
+        });*/
 
 
         /* ---------------------------------------------- /*
@@ -901,13 +902,13 @@ $(document).ready(function() {
             var map = new google.maps.Map(mapElement, mapOptions);
 
             // Let's also add a marker while we're at it
-            var image = new google.maps.MarkerImage('assets/images/map-icon.png',
+            /*var image = new google.maps.MarkerImage('assets/images/map-icon.png',
                 new google.maps.Size(59, 65),
                 new google.maps.Point(0, 0),
                 new google.maps.Point(24, 42)
-            );
+            );*/
 
-            var marker = new google.maps.Marker({
+            /*var marker = new google.maps.Marker({
                 position: mkr,
                 icon: image,
                 title: 'Titan',
@@ -915,7 +916,7 @@ $(document).ready(function() {
                     content: '<p><strong>Rival</strong><br/>121 Somewhere Ave, Suite 123<br/>P: (123) 456-7890<br/>Australia</p>'
                 },
                 map: map,
-            });
+            });*/
         }
 
     });

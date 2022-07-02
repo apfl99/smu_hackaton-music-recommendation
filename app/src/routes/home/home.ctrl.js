@@ -37,6 +37,7 @@ const process = {
         return res.json(response);
     },
     register : async (req,res) => {
+        console.log("home ctrl - register");
         const user = new User(req.body);
         const response = await user.register();
         return res.json(response);
