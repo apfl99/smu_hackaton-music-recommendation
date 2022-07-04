@@ -19,7 +19,7 @@ const { response } = require("express");
 
 const output = {
     root : (req,res) => {
-        res.render('home/home');
+        res.render('home/find_id');
     },
     login : (req,res) => {
         res.render("home/login");

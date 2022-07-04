@@ -36,43 +36,32 @@
   <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
   <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
   <!-- Main stylesheet and color file-->
-  <link href="/css/style.css" rel="stylesheet">
+  
+  <link href="/css/style_test.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
   <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-  <main>
-    <div class="page-loader">
-      <div class="loader">Loading...</div>
-    </div>
-    <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home"
-      data-background="/images/error.jpg">
-      <div class="titan-caption">
-        <div class="caption-content">
-          <div class="font-alt mb-30 titan-title-size-4">asd</div>
-          <div class="font-alt">아이디 찾기<br/>
-          </div>
-          <form action="/find_id">
-            <label for="name">이름</label>
-            <input type="text" style="color: black" id="name" name="name"><br>
-            <label for="email">이메일</label>
-            <input type="email" style="color: black" id="email" name="email"><br>
-            <input type="submit" style="color: black" value="아이디 찾기">
-          </form>
-          <br>
-          <br>
-          <div class="font-alt">비밀번호 찾기<br/>
-          <form action="find_pw">
-            <label for="id">아이디</label>
-            <input type="text" style="color: black" id="id" name="id"><br>
-            <label for="email">이메일</label>
-            <input type="email" style="color: black" id="email" name="email"><br>
-            <input type="submit" style="color: black" value="비밀번호 찾기">
-          </form>
+   <div class="container">
+    <div class="container-login">
+      <form action="/find_id">
+        <div class="welcome">Find your account ID</div>
+        <p>Name</p>
+        <input type="text" name="name" placeholder="Name">
+        <p>Email</p>
+        <input type="email" name="email" placeholder="E-mail">
+        <div class="account-options">
+          <a href="#">Create account</a>
+          <a href="find-pw">Forgot password</a>
         </div>
-      </div>
-    </section>
-  </main>
+        <button class="button-submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  
   <!--  
     JavaScripts
     =============================================

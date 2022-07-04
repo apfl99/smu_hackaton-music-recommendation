@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  
+    font-family: 'Sulphur Point', sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .button-submit {
+    border: none;
+    cursor: pointer;
+    background: #1b82f9;
+  }
+  
+  .button-submit:hover {
+    background: #5da9ff;
+  }
+  
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    background: #222f3e;
+    display: flex;
+    background-image: radial-gradient(to center, #141b24, #175da8, #131a22);
+    background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #845fff 0%, #5d3fbf 50%, rgb(89, 14, 126) 95%);
+  
+  }
+  
+  .container-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    width: 420px;
+    height: 360px;
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    align-items: left;
+    padding: 16px;
+    border: 1px solid rgba(200, 214, 229, 0.596);
+    border-radius: 24px;
+    position: relative;
+  }
+  
+  form img {
+    width: 120px;
+    height: 120px;
+    margin: 20px;
+  }
+  
+  .avatar {
+    padding: 3px;
+    background: #fff;
+    border-radius: 50%;
+  }
+  
+  .welcome {
+    font-size: 30px;
+    color: #3b3b3b;
+    text-align: center;
+    margin-bottom: 13px;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  form input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #d1d1d1;
+    font-size: 20px;
+    padding: 0 16px;
+  }
+  
+  .forgot-password {
+    width: 100%;
+    text-align: right;
+  }
+  
+  .account-options {
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  
+  .account-options a {
+    color: #a7a7a7;;
+  }
+  
+  button {
+    width: 100%;
+    height: 52px;
+    margin-top: 24px;
+    border-radius: 24px;
+    font-size: 22px;
+    font-weight: bold;
+    background: #5f27cd;
+    color: #ffffff;
+  }
+  

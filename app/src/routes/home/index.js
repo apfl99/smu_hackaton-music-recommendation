@@ -24,9 +24,14 @@ const { response } = require("express");
 router.get('/', ctrl.output.root);
 router.get('/login', ctrl.output.login); //로그인
 router.get('/register', ctrl.output.register); //회원가입
+router.get('/find-id', function(req, res, next){
+    res.render("home/find_id");
+});
 router.get('/find_id', function(req, res, next){
     var name = req.query.name;
     var email = req.query.email;
+
+    console.log(name, email);
     var type = "fail";
 
     db.query('SELECT * FROM User', async function(err, results, fields){
@@ -56,6 +61,9 @@ router.get('/find_id', function(req, res, next){
 
     
     //res.render("home/home",);
+});
+router.get('/find-pw', function(req, res, next){
+    res.render("home/find_pw");
 });
 router.get('/find_pw', function(req, res, next){
     var id = req.query.id;
