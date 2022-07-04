@@ -27,6 +27,9 @@ const output = {
     register : (req,res) => {
         res.render("home/register");
     },
+    test : (req,res) => {
+        res.render("home/test");
+    },
 };
 
 
