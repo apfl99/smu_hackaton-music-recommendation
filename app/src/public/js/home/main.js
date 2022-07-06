@@ -5,6 +5,12 @@ $(document).ready(function() {
     if(window.sessionStorage.getItem('isLogined')){
         $('#login_btn').hide();
         $('#logout_btn').show();
+        $('#l_id').val(window.sessionStorage.getItem('userId'));
+        $('#l_id').attr('disabled',true);
+        $('#welcome').text("Welcome! <"+window.sessionStorage.getItem('userId')+">");
+        $('#pass_p').hide();
+        $('#l_password').hide();
+        $('#pass_span').hide();
     }
     else {
         $('#logout_btn').hide();

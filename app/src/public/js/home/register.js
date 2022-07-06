@@ -48,7 +48,7 @@ function register() {
         .then((res) => {
             if (res.success) {
                 alert('회원가입 성공');
-                location.href = "/login";
+                location.href = "/";
             } else {
                 alert(res.msg);
             }
