@@ -37,14 +37,10 @@ const output = {
     },
     register : (req,res) => {
         res.render("home/register");
-<<<<<<< HEAD
-    }
-=======
     },
     test : (req,res) => {
         res.render("home/test");
     },
->>>>>>> origin/현우
 };
 
 const process = {
