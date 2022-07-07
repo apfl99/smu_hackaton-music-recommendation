@@ -7,7 +7,18 @@ const fs = require('fs'); // js 파일 시스템 모듈을 사용하면 컴퓨�
 
 //multer 사용
 const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' }) //업로드
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, '../../uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now()+'--'+file.originalname)
+    }
+});
+
+const upload = multer({storage: fileStorageEngine}).array('files',12);
+
+//const upload = multer({ dest: 'uploads/' }) //업로드
 
 //DB
 const db = require("../../config/db");
@@ -26,9 +37,15 @@ const output = {
     },
     register : (req,res) => {
         res.render("home/register");
+<<<<<<< HEAD
     }
+=======
+    },
+    test : (req,res) => {
+        res.render("home/test");
+    },
+>>>>>>> origin/현우
 };
-
 
 const process = {
     login : async (req,res) => {
@@ -37,11 +54,11 @@ const process = {
         return res.json(response);
     },
     register : async (req,res) => {
+        console.log("home ctrl - register");
         const user = new User(req.body);
         const response = await user.register();
         return res.json(response);
     },
-
 };
 
 module.exports = {

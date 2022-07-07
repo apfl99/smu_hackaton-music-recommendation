@@ -1,16 +1,17 @@
 // 프런트 단의 기능을 구현
 "use strict"
-const id = document.querySelector("#id");
-const passwd = document.querySelector("#passwd");
+const l_id = document.querySelector("#l_id");
+const l_passwd = document.querySelector("#l_password");
 const loginBtn = document.querySelector("#login_btn");
 
 
 loginBtn.addEventListener("click", login);
 
 function login() {
+    console.log(l_id.value+" "+l_passwd.value);
     const req = {
-        id: id.value,
-        passwd: passwd.value,
+        l_id: l_id.value,
+        l_passwd: l_passwd.value,
         logined: false
     };
     //프론트 -> 서버
@@ -26,7 +27,7 @@ function login() {
         if (res.success) {            
             //로그인 성공시 홈 화면으로
             window.sessionStorage.setItem('isLogined',true);
-            window.sessionStorage.setItem('userId',req.id);
+            window.sessionStorage.setItem('userId',req.l_id);
             location.href='/';
         } else {
             if (res.err) return alert(res.err); // 실제로는 err 값이 알림창으로 나오면 안 됨

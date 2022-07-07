@@ -6,8 +6,7 @@ dotenv.config();
 const express = require("express");
 const app = express();
 const home = require("./src/routes/home");
-
-
+const multer = require('multer');
 
 // 뷰 셋팅
 app.set("views", "./src/views");

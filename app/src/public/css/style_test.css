@@ -47,9 +47,25 @@
     align-items: center;
   }
   
+<<<<<<< HEAD
   form {
     width: 420px;
     height: 360px;
+=======
+  .container-reg {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    width: 420px;
+    height: 360px;
+    overflow: auto;
+>>>>>>> origin/현우
     display: flex;
     background: #fff;
     flex-direction: column;
@@ -62,7 +78,43 @@
     border-radius: 24px;
     position: relative;
   }
+<<<<<<< HEAD
   
+=======
+
+  .form-reg {
+    width: 420px;
+    height: 700px;
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    align-items: left;
+    padding-top: 16px;
+    /*padding-bottom: 16px;*/
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid rgba(200, 214, 229, 0.596);
+    border-radius: 24px;
+    position: relative;
+  }
+
+  .form-login {
+    width: 420px;
+    height: 400px;
+    display: flex;
+    background: #fff;
+    flex-direction: column;
+    align-items: left;
+    padding-top: 16px;
+    /*padding-bottom: 16px;*/
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid rgba(200, 214, 229, 0.596);
+    border-radius: 24px;
+    position: relative;
+  }
+
+>>>>>>> origin/현우
   form img {
     width: 120px;
     height: 120px;
