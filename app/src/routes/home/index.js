@@ -6,6 +6,8 @@ const router = express.Router();
 const ctrl = require("./home.ctrl");
 const db = require("../../config/db");
 
+const emailsend = require("../../public/js/home/emailsend");
+
 const fs = require('fs'); // js 파일 시스템 모듈을 사용하면 컴퓨터의 파일 시스템으로 작업할 수 있습니다. 
 
 //multer 사용
