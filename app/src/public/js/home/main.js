@@ -1,4 +1,63 @@
+/* ---------------------------------------------- /*
+ * Login -> session -> changeUI
+ /* ---------------------------------------------- */
+$(document).ready(function() {
+    if(window.sessionStorage.getItem('isLogined')){
+        $('#login_menu').hide();
+        $('#logout_menu').show();
+        $('#signup_menu').hide();
+        $('#mypage_menu').show();
+    }
+    else {
+        $('#logout_menu').hide();
+        $('#signup_menu').show();
+        $('#mypage_menu').hide();
+    }
+});
 
+/* ---------------------------------------------- /*
+ * Logout -> session -> changeUI
+ /* ---------------------------------------------- */
+const logout = document.querySelector('#logout_menu');
+
+logout.addEventListener("click",function() {
+    window.sessionStorage.clear();
+    location.href ='/';
+})
+
+
+/* ---------------------------------------------- /*
+ * MyPage
+ /* ---------------------------------------------- */
+ /*const MyPageBtn = document.querySelector('#MyPage');
+
+ MyPageBtn.addEventListener("click",function(){
+    const LoginId = window.sessionStorage.getItem('userId');
+    const req = {
+        LoginId: LoginId,
+    };
+
+    //프론트 -> 서버
+    fetch("/author_portfolio_nft", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(req), // 문자열로 바꿔주지만 body-parser를 통해 파싱되므로 객체 형태로 다시 전달받게 됨
+    })
+    .then((res) => res.json())
+    .then((res) => {
+        if (res.success) {            
+            location.href = "/author_portfolio_nft?user=" + res.data.username;
+        } else {
+            if (res.err) return alert(res.err); // 실제로는 err 값이 알림창으로 나오면 안 됨
+            alert(res.msg);
+        }
+    })
+    .catch((err) => {
+        console.error(new Error("서버 에러가 발생하였습니다."));
+    });
+ })*/
 
 /* ---------------------------------------------- /*
  * PopUp
@@ -89,12 +148,12 @@ $(document).ready(function() {
          * Set sections backgrounds
          /* ---------------------------------------------- */
 
-        var module = $('.home-section, .module, .module-small, .side-image');
+        /*var module = $('.home-section, .module, .module-small, .side-image');
         module.each(function(i) {
             if ($(this).attr('data-background')) {
                 $(this).css('background-image', 'url(' + $(this).attr('data-background') + ')');
             }
-        });
+        });*/
 
         /* ---------------------------------------------- /*
          * Home section height
@@ -286,12 +345,12 @@ $(document).ready(function() {
             worksgrid_mode = 'fitRows';
         }
 
-        worksgrid.imagesLoaded(function() {
+        /*worksgrid.imagesLoaded(function() {
             worksgrid.isotope({
                 layoutMode: worksgrid_mode,
                 itemSelector: '.work-item'
             });
-        });
+        });*/
 
         $('#filters a').click(function() {
             $('#filters .current').removeClass('current');
@@ -327,12 +386,12 @@ $(document).ready(function() {
          * Post Slider
          /* ---------------------------------------------- */
 
-        if ($('.post-images-slider').length > 0 ) {
+        /*if ($('.post-images-slider').length > 0 ) {
             $('.post-images-slider').flexslider( {
                 animation: "slide",
                 smoothHeight: true,
             });
-        }
+        }*/
 
 
         /* ---------------------------------------------- /*
@@ -438,9 +497,9 @@ $(document).ready(function() {
          * Blog masonry
          /* ---------------------------------------------- */
 
-        $('.post-masonry').imagesLoaded(function() {
+        /*$('.post-masonry').imagesLoaded(function() {
             $('.post-masonry').masonry();
-        });
+        });*/
 
 
         /* ---------------------------------------------- /*
@@ -844,13 +903,13 @@ $(document).ready(function() {
             var map = new google.maps.Map(mapElement, mapOptions);
 
             // Let's also add a marker while we're at it
-            var image = new google.maps.MarkerImage('assets/images/map-icon.png',
+            /*var image = new google.maps.MarkerImage('assets/images/map-icon.png',
                 new google.maps.Size(59, 65),
                 new google.maps.Point(0, 0),
                 new google.maps.Point(24, 42)
-            );
+            );*/
 
-            var marker = new google.maps.Marker({
+            /*var marker = new google.maps.Marker({
                 position: mkr,
                 icon: image,
                 title: 'Titan',
@@ -858,7 +917,7 @@ $(document).ready(function() {
                     content: '<p><strong>Rival</strong><br/>121 Somewhere Ave, Suite 123<br/>P: (123) 456-7890<br/>Australia</p>'
                 },
                 map: map,
-            });
+            });*/
         }
 
     });

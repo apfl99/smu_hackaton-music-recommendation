@@ -11,12 +11,13 @@ class User {
 
     async login(req) {
         const body = this.body;
-
+        console.log(body);
         try {
-            const user = await UserStorage.getUserInfo(body.id);
+            const user = await UserStorage.getUserInfo(body.l_id);
 
             if (user) {
-                if (user.userId == body.id && user.password == body.passwd) {
+                console.log(user.user_password+"/"+body.l_passwd);
+                if (user.user_id == body.l_id && user.user_password == body.l_passwd) {
                     return { success: true };
                 }
     
@@ -33,6 +34,7 @@ class User {
     async register() {
         try {
             const client = this.body;
+            console.log(client);
             const response = await UserStorage.save(client);
             return response;
         } catch(err) {
