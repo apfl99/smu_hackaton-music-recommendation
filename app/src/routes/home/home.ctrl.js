@@ -38,6 +38,15 @@ const output = {
     register : (req,res) => {
         res.render("home/register");
     },
+    search : (req,res) => {
+        res.render("home/search");
+    },
+    hometest : (req,res) => {
+        res.render("home/hometest");
+    },
+    test : (req,res) => {
+        res.render("home/test");
+    },
 };
 
 const process = {

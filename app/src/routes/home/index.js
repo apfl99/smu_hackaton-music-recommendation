@@ -21,6 +21,9 @@ const upload = multer({ dest: 'uploads/' }) //업로드
 router.get('/', ctrl.output.root);
 router.get('/login', ctrl.output.login); //로그인
 router.get('/register', ctrl.output.register); //회원가입
+router.get('/search', ctrl.output.search);
+router.get('/hometest',ctrl.output.hometest);
+router.get('/test',ctrl.output.test);
 router.get('/find-id', function(req, res, next){
     res.render("home/find_id");
 });
