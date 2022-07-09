@@ -3,8 +3,8 @@ console.clear();
 const { gsap, imagesLoaded } = window;
 
 const buttons = {
-	prev: document.querySelector(".btn--left"),
-	next: document.querySelector(".btn--right"),
+	prev: document.querySelector(".prev_btn"),
+	next: document.querySelector(".next_btn"),
 };
 const cardsContainerEl = document.querySelector(".cards__wrapper");
 const appBgContainerEl = document.querySelector(".app__bg");
@@ -47,22 +47,22 @@ function swapCards(direction) {
 
 			nextBgImageEl.style.zIndex = "-1";
 
-			currentCardEl.classList.add("previous--card");
-			previousCardEl.classList.add("next--card");
-			nextCardEl.classList.add("current--card");
+			currentCardEl.classList.add("current--card");
+			previousCardEl.classList.add("previous--card");
+			nextCardEl.classList.add("next--card");
 
-			currentBgImageEl.classList.add("previous--image");
-			previousBgImageEl.classList.add("next--image");
-			nextBgImageEl.classList.add("current--image");
+			currentBgImageEl.classList.add("current--image");
+			previousBgImageEl.classList.add("previous--image");
+			nextBgImageEl.classList.add("next--image");
 		} else if (direction === "left") {
 			previousCardEl.style.zIndex = "30";
 			nextCardEl.style.zIndex = "20";
 
 			previousBgImageEl.style.zIndex = "-1";
 
-			currentCardEl.classList.add("next--card");
-			previousCardEl.classList.add("current--card");
-			nextCardEl.classList.add("previous--card");
+			currentCardEl.classList.add("current--card");
+			previousCardEl.classList.add("previous--card");
+			nextCardEl.classList.add("next--card");
 
 			currentBgImageEl.classList.add("next--image");
 			previousBgImageEl.classList.add("current--image");
@@ -210,7 +210,7 @@ function init() {
 
 const waitForImages = () => {
 	const images = [...document.querySelectorAll("img")];
-	const totalImages = images.length;
+	const totalImages = 10;
 	let loadedImages = 0;
 	const loaderEl = document.querySelector(".loader span");
 
