@@ -47,6 +47,9 @@ const output = {
     test : (req,res) => {
         res.render("home/test");
     },
+    mylist : (req,res) => {
+        res.render("home/mylist");
+    },
 };
 
 const process = {

@@ -1,0 +1,18 @@
+.mylist_text {
+    position: relative;
+
+
+top: 205px;
+
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 52px;
+line-height: 71px;
+
+background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
