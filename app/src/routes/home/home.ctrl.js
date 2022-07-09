@@ -30,7 +30,22 @@ const { response } = require("express");
 
 const output = {
     root : (req,res) => {
-        res.render('home/home');
+       
+        db.query('SELECT * FROM Song_list', async function(err, results){
+            if(err){
+                console.log(err);
+            }
+            var send_results;
+
+            send_results = results.sort(function(a,b){
+                return b.score - a.score;
+            })
+            
+
+            console.log(send_results);
+            console.log("adfsadfsad")
+            res.render("home/root", {results : send_results});
+        });
     },
     login : (req,res) => {
         res.render("home/login");
@@ -45,7 +60,38 @@ const output = {
         res.render("home/hometest");
     },
     test : (req,res) => {
-        res.render("home/test");
+        db.query('SELECT * FROM Song_list', async function(err, results){
+            if(err){
+                console.log(err);
+            }
+            var send_results;
+
+            send_results = results.sort(function(a,b){
+                return b.score - a.score;
+            })
+            
+
+            console.log(send_results);
+            console.log("adfsadfsad")
+            res.render("home/test", {results : send_results});
+        });
+    },
+    slider : (req,res) => {
+        db.query('SELECT * FROM Song_list', async function(err, results){
+            if(err){
+                console.log(err);
+            }
+            var send_results;
+
+            send_results = results.sort(function(a,b){
+                return b.score - a.score;
+            })
+            
+
+            console.log(send_results);
+            console.log("adfsadfsad")
+            res.render("home/slider", {results : send_results});
+        });
     },
 };
 

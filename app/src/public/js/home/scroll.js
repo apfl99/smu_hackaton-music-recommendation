@@ -57,8 +57,8 @@ function scrubTo(totalTime) { // moves the scroll position to the place that cor
   }
 }
 
-document.querySelector(".next").addEventListener("click", () => scrubTo(scrub.vars.totalTime + spacing));
-document.querySelector(".prev").addEventListener("click", () => scrubTo(scrub.vars.totalTime - spacing));
+document.querySelector(".left").addEventListener("click", () => scrubTo(scrub.vars.totalTime + spacing));
+document.querySelector(".right").addEventListener("click", () => scrubTo(scrub.vars.totalTime - spacing));
 
 
 

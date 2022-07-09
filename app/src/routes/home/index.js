@@ -24,6 +24,7 @@ router.get('/register', ctrl.output.register); //회원가입
 router.get('/search', ctrl.output.search);
 router.get('/hometest',ctrl.output.hometest);
 router.get('/test',ctrl.output.test);
+router.get('/slider',ctrl.output.slider);
 router.get('/find-id', function(req, res, next){
     res.render("home/find_id");
 });
