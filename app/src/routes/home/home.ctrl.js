@@ -30,20 +30,21 @@ const { response } = require("express");
 
 const output = {
     root : (req,res) => {
-        db.query('SELECT * FROM Song_list', async function(err, results){
-            if(err){
-                console.log(err);
-            }
-            var send_results;
-
-            send_results = results.sort(function(a,b){
-                return b.score - a.score;
-            })
-            
-
-            console.log(send_results);
-            res.render("home/home", {results : send_results});
-        });
+        
+            db.query('SELECT * FROM Song_list', async function(err, results){
+                if(err){
+                    console.log(err);
+                }
+                var send_results;
+    
+                send_results = results.sort(function(a,b){
+                    return b.score - a.score;
+                })
+                
+                // console.log(send_results);
+                res.render("home/home", {results : send_results});
+            });
+        
     },
     login : (req,res) => {
         res.render("home/login");
