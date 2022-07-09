@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
     
     
+    <!--Add toggle-->
+    <link rel="stylesheet" type="text/css" href="css/toggle.css">
     
 
  </head>
@@ -68,17 +70,21 @@
                             <div class="navbar">
                                 <div class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav me-auto">
-                                        <li class="nav-item"><a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="#home">Home <div class="ripple-wrapper"></div></a>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a>
+                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="#">MyList</a>
                                         </li>
-                                        <li style="display: none;" id="mypage_menu"><a class="nav-link" href="#">MyPage</a>
+                                        <li id="login_menu" class="nav-item"><a id="menu" style="color: #E0FB60;" href="login">Login</a>
                                         </li>
-                                        <li id="login_menu" class="nav-item"><a class="nav-link" href="login">Login</a>
+                                        <li id="signup_menu"><a id="menu" style="color: #E0FB60;" href="register">Sign up</a>
                                         </li>
-                                        <li id="signup_menu"><a href="register">Sign up</a>
+                                        <li style="display: none;" id="logout_menu"><a id="menu" style="color: #E0FB60;">Logout</a>
                                         </li>
-                                        <li style="display: none;" id="logout_menu"><a>Logout</a>
+                                        <li>
+                                            <input type="checkbox" id="toggle" hidden> 
+                                                <label for="toggle" class="toggleSwitch" style="border:2px solid #15FFFF;">
+                                                    <span class="toggleButton"></span>
+                                                </label>
                                         </li>
                                     </ul>
                                 </div>
