@@ -11,17 +11,45 @@ color: #E0FB60;
     background-color: #E0FB60;
     width: 100%;
 }
-.playlist_box {
-    position: absolute;
-    width: 496px;
-    height: 500px;
-    left: 975px;
+.playlist_box  {
+    position: relative;
+    width: 30%;
+    height: 190%;
     top: 484px;
-    
     overflow:scroll;
     background: linear-gradient(0deg, #000000 2.94%, rgba(0, 0, 0, 0) 152.76%);
 }
 .playlist_box ::-webkit-scrollbar{
     width: 10px;
+    background-color: black;
+}
+.playlist_box ::-webkit-scrollbar-thumb {
+    width: 10px;
     background-color: white;
+}
+.child img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 10%;
+    left: 10px;
+}
+.child h4 {
+    top:20%;
+    left: 50px;
+    color: white;
+    height: 60%;
+    margin:0px;
+}
+.child h5 {
+    top:40%;
+    left: 50px;
+    height: 40%;
+    margin:0;
+    color : rgba(255, 255, 255, 0.7);
+}
+.playlist_box .child {
+    width: 496px; 
+    height: 50px;
 }

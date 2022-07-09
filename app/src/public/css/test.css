@@ -22,8 +22,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
   .cards li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 14rem;
+    height: 18rem;
+    text-align: center;
+    line-height: 18rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    background-color: #9d7cce;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.8rem;
+  }
+  /*.cards li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -37,7 +52,7 @@
     top: 0;
     left: 0;
     border-radius: 30px;
-  }
+  }*/
 
   .cards li img{
     position: absolute;
@@ -45,16 +60,38 @@
     width: 100vw;
     align-content: center;
     align-items: center;
-
+  }
+  .cards li img.center{
     width: 467.76px;
     height: 467.76px;
     margin-top: 196.82px;
     margin-left: 238.81px;
+    margin-right: 805.43px;
     box-shadow: 0px 0px 51px -7px rgba(21, 255, 255, 0.9);
     border-radius: 249.5px;
     background-repeat : no-repeat;
     background-size : cover;
     z-index: 1;
+  }
+  .cards li img.left{
+    width: 275px;
+    height: 275px;
+    margin-top: 293px;
+    margin-left: 41px;
+    border-radius: 194.5px;
+    background-repeat : no-repeat;
+    background-size : cover;
+    z-index: 0;
+  }
+  .cards li img.right{
+    width: 275px;
+    height: 275px;
+    margin-top: 293px;
+    margin-left: 627px;
+    border-radius: 194.5px;
+    z-index: 0;
+    background-repeat : no-repeat;
+    background-size : cover;
   }
   
   .actions {
@@ -62,12 +99,11 @@
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
   }
   
   button {
-    display:inline-block;
-    outline: none;
-    border: none;
+    /*display:inline-block;
     padding: 8px 14px;
     background: #414141;
     background-image: -webkit-linear-gradient(top, #575757, #414141);
@@ -91,10 +127,55 @@
     font-weight: 600;
     cursor: pointer;
     font-size: 13px;
-    line-height: 18px;
+    line-height: 18px;*/
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: rgba(17, 17, 17, 0);
+  }
+  button.play{
+    position: absolute;
+    height: 51px;
+    width: 34.42499923706055px;
+    margin-top: 700px;
+    margin-bottom: 95px;
+    margin-left: 453.23px;
+    border-radius: 0px;
+  }
+  button.left{
+    position: absolute;
+    margin-top: 708px;
+    margin-bottom: 103px;
+    margin-left: 308px;
+    height: 34.99999618530287px;
+    width: 32.000003814697386px;
+
+    border-radius: 0px;
+  }
+  button.left{
+    position: absolute;
+    margin-top: 708px;
+    margin-bottom: 103px;
+    margin-left: 308px;
+    height: 34.99999618530287px;
+    width: 32.000003814697386px;
+
+    border-radius: 0px;
+  }
+  button.right{
+    position: absolute;
+    margin-top: 708px;
+    margin-bottom: 103px;
+    margin-left: 601px;
+    height: 34.99999618530287px;
+    width: 32.000003814697386px;
+
+    border-radius: 0px;
   }
   
-  button:hover {
+  /*button:hover {
     background: #57a818;
     background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
     background-image: -moz-linear-gradient(top, #57a818, #4d9916);
@@ -107,12 +188,12 @@
     box-shadow: 0px 1px 0px fefefe;
     color: #ffffff;
     text-decoration: none;
-  }
+  }*/
   
-  button {
+  /*button {
     font-size: 20px;
     font-weight: 400;
-  }
+  }*/
   
   a {
     color: #88ce02;
@@ -526,44 +607,3 @@ ul.imgs li img.right{
     background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
     transform: rotate(180deg);
 }
-
-/*-------------------header-----------------------*/
-.toggleSwitch {
-    width: 6rem;
-    margin: 2rem;
-    height: 3rem;
-    display: block;
-    position: relative;
-    border-radius: 15px;
-    background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
-    cursor: pointer;
-    box-sizing: border-box;
-    border: 4px solid linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
-  }
-  
-  .toggleSwitch .toggleButton {
-    background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 2.6rem;
-    height: 2.6rem;
-    position: absolute;
-    top: 50%;
-    left: .2rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    border: 2px solid linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
-  }
-  
-  /* 체크박스가 체크되면 변경 이벤트 */
-  #toggle:checked ~ .toggleSwitch {
-    background: #181818;
-    border: 2px solid linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
-  }
-  
-  #toggle:checked ~ .toggleSwitch .toggleButton {
-    left: calc(100% - 2.8rem);
-  }
-  
-  .toggleSwitch, .toggleButton {
-    transition: all 0.2s ease-in;
-  }
