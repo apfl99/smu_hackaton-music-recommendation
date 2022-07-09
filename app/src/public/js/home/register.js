@@ -12,14 +12,12 @@ const registerBtn = document.querySelector("#register_btn");
 registerBtn.addEventListener("click",register);
 
 function register() {
-
     checkUseridFormat(id.value);
     checkPasswordFormat(passwd.value);
     checkUsernameFormat(username.value);
     checkEmailFormat(email.value);
     checkNumber(number.value);
     checkRePasswordFormat(passwd.value, confirmPasswd.value);
-
 
     var checkResult = (checkUseridFormat(id.value) && checkPasswordFormat(passwd.value) && checkUsernameFormat(username.value) && checkEmailFormat(email.value) && checkRePasswordFormat(passwd.value, confirmPasswd.value) && checkNumber(number.value));
     
@@ -45,7 +43,7 @@ function register() {
         .then((res) => {
             if (res.success) {
                 alert('회원가입 성공');
-                location.href = "/login";
+                location.href = "/";
             } else {
                 alert(res.msg);
             }

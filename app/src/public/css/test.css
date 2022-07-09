@@ -13,7 +13,7 @@ ul.imgs{
     margin: 0;
 }
 ul.imgs li{
-    position: absolute;
+    position: relative;
     left: 640px;
     transition-delay: 1s;
     list-style: none;
@@ -22,7 +22,7 @@ ul.imgs li{
     border-radius: 30px;
 }
 ul.imgs li img{
-    position: absolute;
+    position: relative;
     
 }
 ul.imgs li img.center{
@@ -53,7 +53,7 @@ ul.imgs li img.right{
 }
 
 .bullets{
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     bottom: 20px;
@@ -68,7 +68,7 @@ ul.imgs li img.right{
     cursor: pointer;
 }
 .bullets label.play{
-    position: absolute;
+    position: relative;
     height: 51px;
     width: 34.42499923706055px;
     margin-top: 828px;
@@ -76,7 +76,7 @@ ul.imgs li img.right{
     border-radius: 0px;
 }
 .bullets label.left{
-    position: absolute;
+    position: relative;
     margin-top: 836px;
     margin-left: 308px;
     background: rgba(255, 255, 255, 0.5);
@@ -86,7 +86,7 @@ ul.imgs li img.right{
     border-radius: 0px;
 }
 .bullets label.right{
-    position: absolute;
+    position: relative;
     margin-top: 836px;
     margin-left: 601px;
     background: rgba(255, 255, 255, 0.5);
@@ -230,7 +230,7 @@ ul.imgs li img.right{
 .slider{
     /*width: 640px;
     height: 480px;*/
-    position: absolute;
+    position: relative;
     margin: 0 auto;
     float: left;
 }
@@ -243,7 +243,7 @@ ul.imgs{
     margin: 0;
 }
 ul.imgs li{
-    position: absolute;
+    position: relative;
     transition-delay: 1s;
     list-style: none;
     padding: 0;
@@ -320,7 +320,7 @@ ul.imgs li img.right{
     color: rgba(255, 255, 255, 0.7);
 }
 .bullets{
-    position: absolute;
+    position: relative;
     transform: translateX(-50%);
     z-index: 2;
 }

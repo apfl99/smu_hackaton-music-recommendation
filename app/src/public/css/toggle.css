@@ -1,3 +1,4 @@
+/*-------------------header-----------------------*/
 .toggleSwitch {
     width: 6rem;
     margin: 2rem;
@@ -37,5 +38,3 @@
   .toggleSwitch, .toggleButton {
     transition: all 0.2s ease-in;
   }
-
-  

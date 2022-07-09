@@ -23,7 +23,9 @@ const upload = multer({ dest: 'uploads/' }) //업로드
 router.get('/', ctrl.output.root);
 router.get('/login', ctrl.output.login); //로그인
 router.get('/register', ctrl.output.register); //회원가입
-router.get('/test', ctrl.output.test);
+router.get('/search', ctrl.output.search);
+router.get('/hometest',ctrl.output.hometest);
+router.get('/test',ctrl.output.test);
 router.get('/find-id', function(req, res, next){
     res.render("home/find_id");
 });
@@ -54,9 +56,9 @@ router.get('/find_id', function(req, res, next){
         }
 
         if(type == "success")
-            res.send("<script>alert('메일로 요청하신 정보가 발송되었습니다.');location.href='/login';</script>");
+            res.send("<script>alert('메일로 요청하신 정보가 발송되었습니다.');location.href='/';</script>");
         else
-            res.send("<script>alert('잘못된 입력 정보입니다.');location.href='/find-id';</script>");
+            res.send("<script>alert('잘못된 입력 정보입니다.');location.href='/';</script>");
     });
 
     
@@ -90,9 +92,9 @@ router.get('/find_pw', function(req, res, next){
         }
 
         if(type == "success")
-            res.send("<script>alert('메일로 요청하신 정보가 발송되었습니다.');location.href='/login';</script>");
+            res.send("<script>alert('메일로 요청하신 정보가 발송되었습니다.');location.href='/';</script>");
         else
-            res.send("<script>alert('잘못된 입력 정보입니다.');location.href='/find-pw';</script>");
+            res.send("<script>alert('잘못된 입력 정보입니다.');location.href='/';</script>");
     });
 
 });
