@@ -2909,36 +2909,7 @@ ul.portfolio li.active {
 
 
 
-  .disk_png {
-    height:200px;
-    width: 200px;
-    animation: rotate_image 6s linear infinite;
-    transform-origin: 50% 50%;}
 
-
-
-  .mypage_png{
-    width: 90%;
-    margin: 10px auto;
-}
-
-.disk_png_first {
-    float: left;
-    margin-left:5%;
-    width:30%;
-    box-sizing: border-box;
-    animation: rotate_image 6s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-.disk_png_second{
-    float: left;
-    margin-left: 25%;
-    width:30%;
-    box-sizing: border-box;
-    animation: rotate_image 6s linear infinite;
-    transform-origin: 50% 50%;
-}
 @keyframes rotate_image{
   100% {
       transform: rotate(360deg);
@@ -2957,4 +2928,11 @@ ul.portfolio li.active {
   height : 300px;
 }
   /*# sourceMappingURL=style.css.map */
-  
+
+.disk {
+  animation: rotate_image 6s linear infinite;transform-origin: 50% 50%;
+  @keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}

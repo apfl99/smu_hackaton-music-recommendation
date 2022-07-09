@@ -30,7 +30,20 @@ const { response } = require("express");
 
 const output = {
     root : (req,res) => {
-        res.render('home/home');
+        db.query('SELECT * FROM Song_list', async function(err, results){
+            if(err){
+                console.log(err);
+            }
+            var send_results;
+
+            send_results = results.sort(function(a,b){
+                return b.score - a.score;
+            })
+            
+
+            console.log(send_results);
+            res.render("home/home", {results : send_results});
+        });
     },
     login : (req,res) => {
         res.render("home/login");
@@ -45,7 +58,20 @@ const output = {
         res.render("home/hometest");
     },
     test : (req,res) => {
-        res.render("home/test");
+        db.query('SELECT * FROM Song_list', async function(err, results){
+            if(err){
+                console.log(err);
+            }
+            var send_results;
+
+            send_results = results.sort(function(a,b){
+                return b.score - a.score;
+            })
+            
+
+            console.log(send_results);
+            res.render("home/test", {results : send_results});
+        });
     },
     mylist : (req,res) => {
         res.render("home/mylist");

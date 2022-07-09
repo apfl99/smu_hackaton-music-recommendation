@@ -1,0 +1,27 @@
+.playlist_text {
+    font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 25px;
+
+color: #E0FB60;
+}
+.playlist_hr {
+    background-color: #E0FB60;
+    width: 100%;
+}
+.playlist_box {
+    position: absolute;
+    width: 496px;
+    height: 500px;
+    left: 975px;
+    top: 484px;
+    
+    overflow:scroll;
+    background: linear-gradient(0deg, #000000 2.94%, rgba(0, 0, 0, 0) 152.76%);
+}
+.playlist_box ::-webkit-scrollbar{
+    width: 10px;
+    background-color: white;
+}
