@@ -1,9 +1,8 @@
-/*----------------test----------------*/
 * {
     box-sizing: border-box;
   }
   body {
-    background: #000;
+    background: #111;
     min-height: 100vh;
     padding: 0;
     margin: 0;
@@ -105,3 +104,152 @@
   a:hover {
     text-decoration: underline;
   }
+
+
+
+
+  .slider{
+    /*width: 640px;
+    height: 480px;*/
+    position: absolute;
+    margin: 0 auto;
+    float: left;
+}
+.slider input[type=radio]{
+    display: none;
+}
+
+ul.imgs{
+    padding: 0;
+    margin: 0;
+}
+ul.imgs li{
+    position: absolute;
+    transition-delay: 1s;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 30px;
+}
+ul.imgs li img{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    align-content: center;
+    align-items: center;
+}
+ul.imgs li img.center{
+    width: 467.76px;
+    height: 467.76px;
+    margin-top: 196.82px;
+    margin-left: 238.81px;
+    box-shadow: 0px 0px 51px -7px rgba(21, 255, 255, 0.9);
+    border-radius: 249.5px;
+    background: url(https://sleeplessaliana1.files.wordpress.com/2022/05/big-naughty-ft.-meenoi-lovey-dovey.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    z-index: 1;
+}
+ul.imgs li img.left{
+    width: 275px;
+    height: 275px;
+    margin-top: 293px;
+    margin-left: 41px;
+    border-radius: 194.5px;
+    background: url(https://i.ytimg.com/vi/WxM0qO29RM8/maxresdefault.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    z-index: 0;
+}
+
+ul.imgs li img.right{
+    width: 275px;
+    height: 275px;
+    margin-top: 293px;
+    margin-left: 627px;
+    border-radius: 194.5px;
+    z-index: 0;
+    background-image: url(https://i.ytimg.com/vi/ebXbLfLACGM/default.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+.info_text li {
+    list-style: none;
+}
+.info_text li.title{
+    position: absolute;
+    width: 190px;
+    height: 38px;
+    margin-top: 727px;
+    margin-left: 381px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+
+    /* color */
+
+    background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.info_text li.singer{
+    position: absolute;
+    width: 127px;
+    height: 29px;
+    margin-top: 771px;
+    margin-left: 408px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+.bullets{
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.bullets label{
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.bullets label.play{
+    position: absolute;
+    height: 51px;
+    width: 34.42499923706055px;
+    margin-top: 828px;
+    margin-bottom: 95px;
+    margin-left: 453.23px;
+    border-radius: 0px;
+}
+.bullets label.left{
+    position: absolute;
+    margin-top: 836px;
+    margin-bottom: 103px;
+    margin-left: 308px;
+    height: 34.99999618530287px;
+    width: 32.000003814697386px;
+
+    border-radius: 0px;
+}
+.bullets label.right{
+    position: absolute;
+    margin-top: 836px;
+    margin-bottom: 103px;
+    margin-left: 601px;
+    height: 34.99999618530287px;
+    width: 32.000003814697386px;
+
+    border-radius: 0px;
+}

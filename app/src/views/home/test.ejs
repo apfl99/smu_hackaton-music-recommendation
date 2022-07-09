@@ -5,27 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMU Hackathon</title>
     <link rel="stylesheet" href="/css/test.css">
-    <link rel="stylesheet" type="text/css" href="/css/toggle.css">
 </head>
 <body bgcolor="black">
-    <ul id="imgholder" class="imgs">
-        <li><img class="left" src="/img/slide1.jpg"></li>
-        <li><img class="center" src="/img/slide2.jpg"></li>
-        <li><img class="right" src="/img/slide3.jpg"></li>
-    </ul>
+    <!-- Home & Menu Section Start -->
+    <header id="home" class="home-section">
+        <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                  <!-- 여기가 로고랑 메뉴 사이 벌리기 클수록 많이 벌어짐-->
+                    <div class="col-sm-6">
+                        <div class="logo">
+                            <a href="/">Rolling</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="navigation-menu">
+                            <div class="navbar">
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav me-auto">
+                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                        </li>
+                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="#">MyList</a>
+                                        </li>
+                                        <li id="login_menu" class="nav-item"><a id="menu" style="color: #E0FB60;" href="login">Login</a>
+                                        </li>
+                                        <li id="signup_menu"><a id="menu" style="color: #E0FB60;" href="register">Sign up</a>
+                                        </li>
+                                        <li style="display: none;" id="logout_menu"><a id="menu" style="color: #E0FB60;">Logout</a>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="toggle" hidden> 
+                                                <label for="toggle" class="toggleSwitch" style="border:2px solid #15FFFF">
+                                                    <span class="toggleButton"></span>
+                                                </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="slider">
+    <ul class="cards">
+        <li><img src="https://sleeplessaliana1.files.wordpress.com/2022/05/big-naughty-ft.-meenoi-lovey-dovey.jpg"></li>
+        <li><img src="https://asproiu.com/wp-content/uploads/2021/08/Cover-The-Kid-LAROI-Justin-Bieber-STAY-Asproiu-Remix.jpg"></li>
+        <li><img src="https://i1.sndcdn.com/artworks-000113543484-4sveun-t500x500.jpg"></li>
+        <li><img src="https://img.joomcdn.net/f26d8fccb4c66abab02261430e3b85e5ef2130e7_1024_1024.jpeg"></li>
+        <li><img src="http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/933/154/80933154_1490341401069_1_600x600.JPG"></li>
+        <li><img src="https://images.genius.com/f70c31a33a59de418338ca6aa598fd58.600x593x1.jpg"></li>
+        <li><img src="https://m.media-amazon.com/images/I/51qzcvZgh1L._SY580_.jpg"></li>
+        <li><img src="https://c-fa.cdn.smule.com/rs-s25/arr/f9/51/cad287f5-618a-4056-9bee-01685b824e56_1024.jpg"></li>
+        <li><img src="https://cdnimg.melon.co.kr/cm2/album/images/106/09/232/10609232_20210517155130_500.jpg?eda48bcb5e6a2b2a9f40fc2a0463f47f"></li>
+        <li><img src="https://w.namu.la/s/f8d2a1317996e1a950ce27d98121f7d21dbc2d3da53995eb2a68df145280e1271f3c9f4ff8fa8fb25be8452d9543e5f442611d98a1480b08af700d4094989ab7a9476a0c5a4f797f7db2ca8457def51b7863961be165093ae1bfee713021e370"></li>
+      </ul>
+    <!--사진-->
+    <!--<ul id="imgholder" class="imgs">
+        <li><img id="one" class="left"></li>
+        <li><img id="two" class="center"></li>
+        <li><img id="three" class="right"></li>
+    </ul>-->
     <div class="info_text">
         <li class="title">TIME TRAVEL</li>
         <li class="singer">빈지노(Beenzino)</li>
     </div>
     <div class="bullets">
-        <label class="left" for="slide1"><img src="/img/left.png"></label>
-        <label class="play" for="slide2"><img src="/img/play.png"></label>
-        <label class="right" for="slide3"><img src="/img/right.png"></label>
+        <label class="left" for="slide1" id="left_btn"><img src="/img/left.png"></label>
+        <label class="play" for="slide2" id="play_btn"><img src="/img/play.png"></label>
+        <label class="right" for="slide3" id="right_btn"><img src="/img/right.png"></label>
     </div>
 </div>
 <!--<div class="list">
     <p class="pl">Play List</p>
     <hr class="line">
 </div>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/wow/dist/wow.js"></script>
+<script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="/lib/flexslider/jquery.flexslider.js"></script>
+<script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="/js/home/plugins.js"></script>
+<script src="/js/home/scroll.js"></script>
 </body>
 </html>
