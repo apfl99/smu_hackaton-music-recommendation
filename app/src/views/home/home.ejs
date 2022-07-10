@@ -26,7 +26,7 @@
         $('#music_title').text(title);
         $('#music_singer').text(singer);
         $('#music_tags').text(tags);
-        //side_img(video_id);
+        side_img(video_id);
         player.loadVideoById(video_id);
     }
 </script>
@@ -48,9 +48,9 @@
                             <div class="navbar">
                                 <div class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav me-auto">
-                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="/">Home <div class="ripple-wrapper"></div></a>
                                         </li>
-                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="#">MyList</a>
+                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="/mylist">MyList</a>
                                         </li>
                                         <li id="login_menu" class="nav-item"><a id="menu" style="color: #E0FB60;" href="login">Login</a>
                                         </li>
@@ -308,27 +308,7 @@
             {"song_id": 6, "video_id": "<%=results[6].video_id%>", "movieTitle": "<%=results[6].title%>", "song_singer": "<%=results[6].singer%>", "song_info": "<%=results[6].tags%>", "song_thumb": "<%=results[6].thumbnail%>"},
             {"song_id": 7, "video_id": "<%=results[7].video_id%>", "movieTitle": "<%=results[7].title%>", "song_singer": "<%=results[7].singer%>", "song_info": "<%=results[7].tags%>", "song_thumb": "<%=results[7].thumbnail%>"},
             {"song_id": 8, "video_id": "<%=results[8].video_id%>", "movieTitle": "<%=results[8].title%>", "song_singer": "<%=results[8].singer%>", "song_info": "<%=results[8].tags%>", "song_thumb": "<%=results[8].thumbnail%>"},
-            {"song_id": 9, "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>", "song_singer": "<%=results[9].singer%>", "song_info": "<%=results[9].tags%>", "song_thumb": "<%=results[9].thumbnail%>"},
-            {"song_id": 10, "video_id": "<%=results[10].video_id%>", "movieTitle": "<%=results[10].title%>", "song_singer": "<%=results[10].singer%>", "song_info": "<%=results[10].tags%>", "song_thumb": "<%=results[10].thumbnail%>"},
-            {"song_id": 11, "video_id": "<%=results[11].video_id%>", "movieTitle": "<%=results[11].title%>", "song_singer": "<%=results[11].singer%>", "song_info": "<%=results[11].tags%>", "song_thumb": "<%=results[11].thumbnail%>"},
-            {"song_id": 12, "video_id": "<%=results[12].video_id%>", "movieTitle": "<%=results[12].title%>", "song_singer": "<%=results[12].singer%>", "song_info": "<%=results[12].tags%>", "song_thumb": "<%=results[12].thumbnail%>"},
-            {"song_id": 13, "video_id": "<%=results[13].video_id%>", "movieTitle": "<%=results[13].title%>", "song_singer": "<%=results[13].singer%>", "song_info": "<%=results[13].tags%>", "song_thumb": "<%=results[13].thumbnail%>"},
-            {"song_id": 14, "video_id": "<%=results[14].video_id%>", "movieTitle": "<%=results[14].title%>", "song_singer": "<%=results[14].singer%>", "song_info": "<%=results[14].tags%>", "song_thumb": "<%=results[14].thumbnail%>"},
-            {"song_id": 15, "video_id": "<%=results[15].video_id%>", "movieTitle": "<%=results[15].title%>", "song_singer": "<%=results[15].singer%>", "song_info": "<%=results[15].tags%>", "song_thumb": "<%=results[15].thumbnail%>"},
-            {"song_id": 16, "video_id": "<%=results[16].video_id%>", "movieTitle": "<%=results[16].title%>", "song_singer": "<%=results[16].singer%>", "song_info": "<%=results[16].tags%>", "song_thumb": "<%=results[16].thumbnail%>"},
-            {"song_id": 17, "video_id": "<%=results[17].video_id%>", "movieTitle": "<%=results[17].title%>", "song_singer": "<%=results[17].singer%>", "song_info": "<%=results[17].tags%>", "song_thumb": "<%=results[17].thumbnail%>"},
-            {"song_id": 18, "video_id": "<%=results[18].video_id%>", "movieTitle": "<%=results[18].title%>", "song_singer": "<%=results[18].singer%>", "song_info": "<%=results[18].tags%>", "song_thumb": "<%=results[18].thumbnail%>"},
-            {"song_id": 19, "video_id": "<%=results[19].video_id%>", "movieTitle": "<%=results[19].title%>", "song_singer": "<%=results[19].singer%>", "song_info": "<%=results[19].tags%>", "song_thumb": "<%=results[19].thumbnail%>"},
-            {"song_id": 20, "video_id": "<%=results[20].video_id%>", "movieTitle": "<%=results[20].title%>", "song_singer": "<%=results[20].singer%>", "song_info": "<%=results[20].tags%>", "song_thumb": "<%=results[20].thumbnail%>"},
-            {"song_id": 21, "video_id": "<%=results[21].video_id%>", "movieTitle": "<%=results[21].title%>", "song_singer": "<%=results[21].singer%>", "song_info": "<%=results[21].tags%>", "song_thumb": "<%=results[21].thumbnail%>"},
-            {"song_id": 22, "video_id": "<%=results[22].video_id%>", "movieTitle": "<%=results[22].title%>", "song_singer": "<%=results[22].singer%>", "song_info": "<%=results[22].tags%>", "song_thumb": "<%=results[22].thumbnail%>"},
-            {"song_id": 23, "video_id": "<%=results[23].video_id%>", "movieTitle": "<%=results[23].title%>", "song_singer": "<%=results[23].singer%>", "song_info": "<%=results[23].tags%>", "song_thumb": "<%=results[23].thumbnail%>"},
-            {"song_id": 24, "video_id": "<%=results[24].video_id%>", "movieTitle": "<%=results[24].title%>", "song_singer": "<%=results[24].singer%>", "song_info": "<%=results[24].tags%>", "song_thumb": "<%=results[24].thumbnail%>"},
-            {"song_id": 25, "video_id": "<%=results[25].video_id%>", "movieTitle": "<%=results[25].title%>", "song_singer": "<%=results[25].singer%>", "song_info": "<%=results[25].tags%>", "song_thumb": "<%=results[25].thumbnail%>"},
-            {"song_id": 26, "video_id": "<%=results[26].video_id%>", "movieTitle": "<%=results[26].title%>", "song_singer": "<%=results[26].singer%>", "song_info": "<%=results[26].tags%>", "song_thumb": "<%=results[26].thumbnail%>"},
-            {"song_id": 27, "video_id": "<%=results[27].video_id%>", "movieTitle": "<%=results[27].title%>", "song_singer": "<%=results[27].singer%>", "song_info": "<%=results[27].tags%>", "song_thumb": "<%=results[27].thumbnail%>"},
-            {"song_id": 28, "video_id": "<%=results[28].video_id%>", "movieTitle": "<%=results[28].title%>", "song_singer": "<%=results[28].singer%>", "song_info": "<%=results[28].tags%>", "song_thumb": "<%=results[28].thumbnail%>"},
-            {"song_id": 29, "video_id": "<%=results[29].video_id%>", "movieTitle": "<%=results[29].title%>", "song_singer": "<%=results[29].singer%>", "song_info": "<%=results[29].tags%>", "song_thumb": "<%=results[29].thumbnail%>"}
+            {"song_id": 9, "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>", "song_singer": "<%=results[9].singer%>", "song_info": "<%=results[9].tags%>", "song_thumb": "<%=results[9].thumbnail%>"}
         ];
         
         
