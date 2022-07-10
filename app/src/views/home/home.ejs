@@ -26,7 +26,7 @@
         $('#music_title').text(title);
         $('#music_singer').text(singer);
         $('#music_tags').text(tags);
-        side_img(video_id);
+        //side_img(video_id);
         player.loadVideoById(video_id);
     }
 </script>
@@ -50,7 +50,7 @@
                                     <ul class="nav navbar-nav me-auto">
                                         <li class="nav-item"><a id="menu" style="color: #15FFFF" href="/">Home <div class="ripple-wrapper"></div></a>
                                         </li>
-                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="/mylist">MyList</a>
+                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="mylist">MyList</a>
                                         </li>
                                         <li id="login_menu" class="nav-item"><a id="menu" style="color: #E0FB60;" href="login">Login</a>
                                         </li>
@@ -308,7 +308,9 @@
             {"song_id": 6, "video_id": "<%=results[6].video_id%>", "movieTitle": "<%=results[6].title%>", "song_singer": "<%=results[6].singer%>", "song_info": "<%=results[6].tags%>", "song_thumb": "<%=results[6].thumbnail%>"},
             {"song_id": 7, "video_id": "<%=results[7].video_id%>", "movieTitle": "<%=results[7].title%>", "song_singer": "<%=results[7].singer%>", "song_info": "<%=results[7].tags%>", "song_thumb": "<%=results[7].thumbnail%>"},
             {"song_id": 8, "video_id": "<%=results[8].video_id%>", "movieTitle": "<%=results[8].title%>", "song_singer": "<%=results[8].singer%>", "song_info": "<%=results[8].tags%>", "song_thumb": "<%=results[8].thumbnail%>"},
-            {"song_id": 9, "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>", "song_singer": "<%=results[9].singer%>", "song_info": "<%=results[9].tags%>", "song_thumb": "<%=results[9].thumbnail%>"}
+            {"song_id": 9, "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>", "song_singer": "<%=results[9].singer%>", "song_info": "<%=results[9].tags%>", "song_thumb": "<%=results[9].thumbnail%>"},
+            {"song_id": 10, "video_id": "<%=results[10].video_id%>", "movieTitle": "<%=results[10].title%>", "song_singer": "<%=results[10].singer%>", "song_info": "<%=results[10].tags%>", "song_thumb": "<%=results[10].thumbnail%>"},
+            
         ];
         
         
