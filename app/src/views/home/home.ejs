@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/toggle.css">
     <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="/css/playlist.css">
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
@@ -17,9 +18,18 @@
 
     <!-- All CSS Plugins -->
     <link rel="stylesheet" type="text/css" href="css/plugin.css">
-    <link rel="stylesheet" type="text/css" href="css/playlist.css">
 </head>
-
+<script>
+    function list_click(video_id, t_id, title, singer, tags, ){
+        console.log(video_id+"/");
+        $("#current_img").attr("src", t_id);
+        $('#music_title').text(title);
+        $('#music_singer').text(singer);
+        $('#music_tags').text(tags);
+        side_img(video_id);
+        player.loadVideoById(video_id);
+    }
+</script>
 <body style="background-color: black;">
     <!-- Home & Menu Section Start -->
     <header id="home" class="home-section">
@@ -38,7 +48,7 @@
                             <div class="navbar">
                                 <div class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav me-auto">
-                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                        <li class="nav-item"><a id="menu" style="color: #15FFFF" href="/">Home <div class="ripple-wrapper"></div></a>
                                         </li>
                                         <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #E0FB60;" href="/mylist">MyList</a>
                                         </li>
@@ -49,10 +59,10 @@
                                         <li style="display: none;" id="logout_menu"><a id="menu" style="color: #E0FB60;">Logout</a>
                                         </li>
                                         <li>
-                                                <input type="checkbox" id="toggle" checked="on" hidden> 
-                                                    <label for="toggle" class="toggleSwitch" style="border:2px solid #15FFFF">
-                                                        <span class="toggleButton"></span>
-                                                </label>
+                                            <!--<input type="checkbox" id="toggle" hidden> 
+                                                <label for="toggle" class="toggleSwitch" style="border:2px solid #15FFFF">
+                                                    <span class="toggleButton"></span>
+                                                </label>-->
                                         </li>
                                     </ul>
                                 </div>
@@ -63,66 +73,64 @@
             </div>
         </div>
     </header>
-    <script>
-        
-    </script>
+    
     <!--start-->
-    <div class="app" style="float: left;">
+    <div class="app">
         <div class="cardList">
-            <button class="cardList__btn btn btn--left">
+            <!--<button class="cardList__btn btn btn--left">
                 <div class="icon">
                     <svg>
                         <use xlink:href="#arrow-left"></use>
                     </svg>
                 </div>
-            </button>
+            </button>-->
     
             <div class="cards__wrapper">
                 <div class="card current--card">
                     <div class="card__image">
-                        <img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+                        <img id="current_img" src="<%=results[0].thumbnail%>" alt="" />
                     </div>
                 </div>
 
                 <div class="card next--card">
                     <div class="card__image">
-                        <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+                        <img id="next_img" src="<%=results[1].thumbnail%>" alt="" />
                     </div>
                 </div>
     
                 <div class="card previous--card">
                     <div class="card__image">
-                        <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+                        <img id="prev_img" src="<%=results[9].thumbnail%>" alt="" />
                     </div>
                 </div>
             </div>
     
-            <button class="cardList__btn btn btn--right">
+            <!--<button class="cardList__btn btn btn--right">
                 <div class="icon">
                     <svg>
                         <use xlink:href="#arrow-right"></use>
                     </svg>
                 </div>
-            </button>
+            </button>-->
         </div>
         <div class="infoList">
             <div class="info__wrapper">
-                <div class="info current--info">
-                    <h1 class="text name"><%=results[0].title%></h1>
-                    <h4 class="text location"><%=results[0].singer%></h4>
-                    <p class="text description"><%=results[0].tags%></p>
+                <div class="info current--info" >
+                    <!--<h1 id="current_title" class="text name"><%=results[0].title%></h1>
+                    <h4 id="current_singer" class="text location"><%=results[0].singer%></h4>
+                    <p id="current_tags" class="text description"><%=results[0].tags%></p>-->
                 </div>
     
                 <div class="info next--info">
-                    <h1 class="text name">Machu Pichu</h1>
-                    <h4 class="text location">Peru</h4>
-                    <p class="text description">Adventure is never far away</p>
+                    <h1 id="next_title" class="text name"><%=results[1].title%></h1>
+                    <h4 id="next_singer" class="text location"><%=results[1].singer%></h4>
+                    <p id="next_tags" class="text description"><%=results[1].tags%></p>
                 </div>
     
                 <div class="info previous--info">
-                    <h1 class="text name">Chamonix</h1>
-                    <h4 class="text location">France</h4>
-                    <p class="text description">Let your dreams come true</p>
+                    <h1 id="prev_title" class="text name"><%=results[9].title%></h1>
+                    <h4 id="prev_singer" class="text location"><%=results[9].singer%></h4>
+                    <p id="prev_tags" class="text description"><%=results[9].tags%></p>
                 </div>
             </div>
         </div>
@@ -161,42 +169,55 @@
         </symbol>
     </svg>
 
+    <div style="width: 500px; z-index:200; margin-top:300px; margin-left:0px; position:absolute">
+        <p class="a" id="music_title" style="font-size : 36px; color:#fff; font-weight:600; text-transform: uppercase; font-family: 'Montserrat';"><%=results[0].title%></p>
+                <p class="b" id="music_singer" style="font-size : 28px; color:#fff; font-weight:600; text-transform: uppercase; font-family: 'Montserrat';"><%=results[0].singer%></p>
+                <hr style="width: 30%;">
+                <p class="c" id="music_tags" style="font-size : 19px; color:#fff; font-weight:600; text-transform: uppercase; font-family: 'Montserrat';"><%=results[0].tags%></p>
+        </div>
     <div class="support" id = "movieListCtrlID" ng-controller="movieListController">   
         <div id="player"></div> 
         <div class="music_container" ng-app="movieListApp">
-           
-               <div id = "movieListCtrlID" ng-controller="movieListController">              
-   
-                   <button id="previousBtn" ng-click="previous()"><img src="/img/previous.png"></button>
+            <div class="abc" id = "movieListCtrlID" ng-controller="movieListController">
+                
+                   <button class="prev_btn" id="previousBtn" ng-click="prev()"><img src="/img/previous.png"></button>
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <button id="pauseBtn" ng-click="pause()"><img src="/img/pause.png"></button>
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <button id="playBtn" ng-click="play()"><img src="/img/play.png"></button>
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <button id="forwardBtn" ng-click="forward()"><img src="/img/next.png"></button>
+                   <button class="next_btn" id="forwardBtn" ng-click="next()"><img src="/img/next.png"></button>
                  </div>
          
                </div>          
-        </div>
     </div>
-    
-        <div class="playlist_box">    
-            <h4 class="playlist_text">Play List</h6>
-            <hr class="playlist_hr">
-            <% for(let result of results) { %>
-            <div class="child">
-                <div style="float: left; display:inline-block; width:20%;height:50px;">
-                    <img src="<%=result.thumbnail%>">
-                </div>
-                <div style="float: right; display:inline-block; width:80%; height:50px;">
-                    <h4><%=result.title%></h4><h5><%=result.singer%></h5>
-                </div>
+</div>
+<% for(let result of results) { %>
+<script>var index=[0,1,2,3,4,5,6,7,8,9];</script>
+<% } %>
+    <div class="playlist_box">    
+        <h4 class="playlist_text">Play List</h6>
+        <hr class="playlist_hr">
+        <% for(let result of results) { %>
+            <script>
+                var i=result.index;
+                console.log(i);
+            </script>
+        <div class="child">
+            <div style="float: left; display:inline-block; width:20%; height:50px;">
+                <img src="<%=result.thumbnail%>" onclick="list_click('<%=result.video_id%>','<%=result.thumbnail%>','<%=result.title%>','<%=result.singer%>','<%=result.tags%>',index[i])">
             </div>
-            <hr style="color:rgba(9, 9, 9, 0.7);">
-            <% } %>
-
+            <div style="float: right; display:inline-block; width:80%; height:50px;">
+                <h4><%=result.title%></h4><h5><%=result.singer%></h5>
+            </div>
+            <script>
+                i++;
+            </script>
         </div>
+        <hr style="color:rgba(9, 9, 9, 0.7);">
+        <% } %>
 
+    </div>
     <!--end-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
@@ -213,7 +234,8 @@
 <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
 
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="/js/home/slide.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+<script  src="/js/home/slide.js"></script>
 
 <!-- All Javascript Plugins  -->
 <script src="js/home/plugins.js"></script>
@@ -221,16 +243,16 @@
 <!-- Main Javascript File  -->
 <script src="js/home/main.js"></script>
 
-<script src="js/home/toggle.js"></script>
-
 <script>
-        
+    var current_id = "<%=results[0].video_id%>";
+    var current_index = 0;
+    var current_thumb = "<%=results[0].thumbnail%>"
     var player = null;
     var options =
         {
             width: "0",              
             height: "0",             
-            videoId: "<%=results[0].video_id%>",  
+            videoId: "<%=results[0].video_id%>",
             playerVars: {
                 autoplay: 1,
                 controls: 0 ,
@@ -263,6 +285,12 @@
             }); 
         }
     }
+
+    function side_img(index){
+        scope.select(index);
+            console.log(index);
+    }
+
     angular.module('movieListApp', [])
     .controller('movieListController', function ($scope) {
         var movieInfo;
@@ -271,44 +299,119 @@
     
     //수정할 부분
         $scope.movies = [
-            {"song_id": "<%=results[0].sing_id%>", "video_id": "<%=results[0].video_id%>", "movieTitle": "<%=results[0].title%>"},
-            {"song_id": "<%=results[1].sing_id%>", "video_id": "<%=results[1].video_id%>", "movieTitle": "<%=results[1].title%>"},
-            {"song_id": "<%=results[2].sing_id%>", "video_id": "<%=results[2].video_id%>", "movieTitle": "<%=results[2].title%>"},
-            {"song_id": "<%=results[3].sing_id%>", "video_id": "<%=results[3].video_id%>", "movieTitle": "<%=results[3].title%>"},
-            {"song_id": "<%=results[4].sing_id%>", "video_id": "<%=results[4].video_id%>", "movieTitle": "<%=results[4].title%>"},
-            {"song_id": "<%=results[5].sing_id%>", "video_id": "<%=results[5].video_id%>", "movieTitle": "<%=results[5].title%>"},
-            {"song_id": "<%=results[6].sing_id%>", "video_id": "<%=results[6].video_id%>", "movieTitle": "<%=results[6].title%>"},
-            {"song_id": "<%=results[7].sing_id%>", "video_id": "<%=results[7].video_id%>", "movieTitle": "<%=results[7].title%>"},
-            {"song_id": "<%=results[8].sing_id%>", "video_id": "<%=results[8].video_id%>", "movieTitle": "<%=results[8].title%>"},
-            {"song_id": "<%=results[9].sing_id%>", "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>"},
-            // {"song_id": "<%=results[10].sing_id%>", "video_id": "<%=results[10].video_id%>", "movieTitle": "<%=results[10].title%>"},
-            // {"song_id": "<%=results[11].sing_id%>", "video_id": "<%=results[11].video_id%>", "movieTitle": "<%=results[11].title%>"},
-            // {"song_id": "<%=results[12].sing_id%>", "video_id": "<%=results[12].video_id%>", "movieTitle": "<%=results[12].title%>"},
-            // {"song_id": "<%=results[13].sing_id%>", "video_id": "<%=results[13].video_id%>", "movieTitle": "<%=results[13].title%>"},
-            // {"song_id": "<%=results[14].sing_id%>", "video_id": "<%=results[14].video_id%>", "movieTitle": "<%=results[14].title%>"},
-            // {"song_id": "<%=results[15].sing_id%>", "video_id": "<%=results[15].video_id%>", "movieTitle": "<%=results[15].title%>"},
-            // {"song_id": "<%=results[16].sing_id%>", "video_id": "<%=results[16].video_id%>", "movieTitle": "<%=results[16].title%>"},
-            // {"song_id": "<%=results[17].sing_id%>", "video_id": "<%=results[17].video_id%>", "movieTitle": "<%=results[17].title%>"},
-            // {"song_id": "<%=results[18].sing_id%>", "video_id": "<%=results[18].video_id%>", "movieTitle": "<%=results[18].title%>"},
-            // {"song_id": "<%=results[19].sing_id%>", "video_id": "<%=results[19].video_id%>", "movieTitle": "<%=results[19].title%>"},
-            // {"song_id": "<%=results[20].sing_id%>", "video_id": "<%=results[20].video_id%>", "movieTitle": "<%=results[20].title%>"},
-            // {"song_id": "<%=results[21].sing_id%>", "video_id": "<%=results[21].video_id%>", "movieTitle": "<%=results[21].title%>"},
-            // {"song_id": "<%=results[22].sing_id%>", "video_id": "<%=results[22].video_id%>", "movieTitle": "<%=results[22].title%>"},
-            // {"song_id": "<%=results[23].sing_id%>", "video_id": "<%=results[23].video_id%>", "movieTitle": "<%=results[23].title%>"},
-            // {"song_id": "<%=results[24].sing_id%>", "video_id": "<%=results[24].video_id%>", "movieTitle": "<%=results[24].title%>"},
-            // {"song_id": "<%=results[25].sing_id%>", "video_id": "<%=results[25].video_id%>", "movieTitle": "<%=results[25].title%>"},
-            // {"song_id": "<%=results[26].sing_id%>", "video_id": "<%=results[26].video_id%>", "movieTitle": "<%=results[26].title%>"},
-            // {"song_id": "<%=results[27].sing_id%>", "video_id": "<%=results[27].video_id%>", "movieTitle": "<%=results[27].title%>"},
-            // {"song_id": "<%=results[28].sing_id%>", "video_id": "<%=results[28].video_id%>", "movieTitle": "<%=results[28].title%>"},
-            // {"song_id": "<%=results[29].sing_id%>", "video_id": "<%=results[29].video_id%>", "movieTitle": "<%=results[29].title%>"},
+            {"song_id": 0, "video_id": "<%=results[0].video_id%>", "movieTitle": "<%=results[0].title%>", "song_singer": "<%=results[0].singer%>", "song_info": "<%=results[0].tags%>", "song_thumb": "<%=results[0].thumbnail%>"},
+            {"song_id": 1, "video_id": "<%=results[1].video_id%>", "movieTitle": "<%=results[1].title%>", "song_singer": "<%=results[1].singer%>", "song_info": "<%=results[1].tags%>", "song_thumb": "<%=results[1].thumbnail%>"},
+            {"song_id": 2, "video_id": "<%=results[2].video_id%>", "movieTitle": "<%=results[2].title%>", "song_singer": "<%=results[2].singer%>", "song_info": "<%=results[2].tags%>", "song_thumb": "<%=results[2].thumbnail%>"},
+            {"song_id": 3, "video_id": "<%=results[3].video_id%>", "movieTitle": "<%=results[3].title%>", "song_singer": "<%=results[3].singer%>", "song_info": "<%=results[3].tags%>", "song_thumb": "<%=results[3].thumbnail%>"},
+            {"song_id": 4, "video_id": "<%=results[4].video_id%>", "movieTitle": "<%=results[4].title%>", "song_singer": "<%=results[4].singer%>", "song_info": "<%=results[4].tags%>", "song_thumb": "<%=results[4].thumbnail%>"},
+            {"song_id": 5, "video_id": "<%=results[5].video_id%>", "movieTitle": "<%=results[5].title%>", "song_singer": "<%=results[5].singer%>", "song_info": "<%=results[5].tags%>", "song_thumb": "<%=results[5].thumbnail%>"},
+            {"song_id": 6, "video_id": "<%=results[6].video_id%>", "movieTitle": "<%=results[6].title%>", "song_singer": "<%=results[6].singer%>", "song_info": "<%=results[6].tags%>", "song_thumb": "<%=results[6].thumbnail%>"},
+            {"song_id": 7, "video_id": "<%=results[7].video_id%>", "movieTitle": "<%=results[7].title%>", "song_singer": "<%=results[7].singer%>", "song_info": "<%=results[7].tags%>", "song_thumb": "<%=results[7].thumbnail%>"},
+            {"song_id": 8, "video_id": "<%=results[8].video_id%>", "movieTitle": "<%=results[8].title%>", "song_singer": "<%=results[8].singer%>", "song_info": "<%=results[8].tags%>", "song_thumb": "<%=results[8].thumbnail%>"},
+            {"song_id": 9, "video_id": "<%=results[9].video_id%>", "movieTitle": "<%=results[9].title%>", "song_singer": "<%=results[9].singer%>", "song_info": "<%=results[9].tags%>", "song_thumb": "<%=results[9].thumbnail%>"}
         ];
         
         
         $scope.movie = $scope.movies[0];
         $scope.onSelectChange = function() {
             player.loadVideoById($scope.movie.video_id);
-            $scope.index = $scope.movie.song_id;       
+            $scope.index = $scope.movie.song_id;
         };
+
+
+
+        $scope.prev = function() {
+            console.log("ori : "+current_index);
+            if(current_index == 0){
+                $scope.movie = $scope.movies[9];
+                current_index = 9;
+                console.log(current_index);
+                
+                $("#current_img").attr("src", "<%=results[9].thumbnail%>");
+                $("#prev_img").attr("src", "<%=results[8].thumbnail%>");
+                $("#next_img").attr("src", "<%=results[0].thumbnail%>");
+                $('#current_title').text("<%=results[9].title%>");
+                $('#music_title').text($scope.movies[9].movieTitle);
+                $('#music_singer').text($scope.movies[9].singer);
+                $('#music_tags').text($scope.movies[9].tags);
+                $('#current_singer').text("<%=results[9].singer%>");
+                $('#current_tags').text("<%=results[9].tags%>");
+            }
+            else{
+                current_index = $scope.movie.song_id-1;
+                $scope.movie = $scope.movies[current_index];
+                console.log(current_index);
+                var pr = $scope.movies[current_index-1];
+                var nx = $scope.movies[current_index+1];
+                if(current_index-1 < 0){
+                    $("#prev_img").attr("src", $scope.movies[9].song_thumb);
+                }
+                else{
+                    $("#prev_img").attr("src", $scope.movies[current_index-1].song_thumb);
+                }
+                $("#current_img").attr("src", $scope.movie.song_thumb);
+                $("#next_img").attr("src", $scope.movies[current_index+1].song_thumb);
+                $('#current_title').text($scope.movie.movieTitle);
+                $('#music_title').text($scope.movies[current_index].movieTitle);
+                $('#music_singer').text($scope.movies[current_index].singer);
+                $('#music_tags').text($scope.movies[current_index].tags);
+                $('#current_singer').text($scope.movie.song_singer);
+                $('#current_tags').text($scope.movie.song_info);
+            }
+            player.loadVideoById($scope.movie.video_id);
+        }
+
+        $scope.next = function() {
+            console.log("ori : "+current_index);
+            if(current_index == 9){
+                $scope.movie = $scope.movies[0];
+                current_index = 0;
+                console.log(current_index);
+                console.log($scope.movie);
+                $("#current_img").attr("src", "<%=results[0].thumbnail%>");
+                $("#prev_img").attr("src", "<%=results[9].thumbnail%>");
+                $("#next_img").attr("src", "<%=results[1].thumbnail%>");
+                $('#current_title').text("<%=results[0].title%>");
+                $('#current_singer').text("<%=results[0].singer%>");
+                $('#music_title').text($scope.movies[0].movieTitle);
+                $('#music_singer').text($scope.movies[0].singer);
+                $('#music_tags').text($scope.movies[0].tags);
+                $('#current_tags').text("<%=results[0].tags%>");
+            }
+            else {
+                current_index = $scope.movie.song_id+1;
+                $scope.movie = $scope.movies[current_index];
+                console.log(current_index);
+                console.log($scope.movie);
+                var pr = $scope.movies[current_index-1];
+                var nx = $scope.movies[current_index+1];
+                if(current_index+1 > 9){
+                    $("#next_img").attr("src", $scope.movies[0].song_thumb);
+                }
+                else{
+                    $("#next_img").attr("src", $scope.movies[current_index+1].song_thumb);
+                }
+                $("#current_img").attr("src", $scope.movie.song_thumb);
+                $("#prev_img").attr("src", $scope.movies[current_index-1].song_thumb);
+                $('#current_title').text($scope.movie.movieTitle);
+                $('#music_title').text($scope.movies[current_index].movieTitle);
+                $('#music_singer').text($scope.movies[current_index].song_singer);
+                $('#music_tags').text($scope.movies[current_index].song_info);
+                $('#current_singer').text($scope.movie.song_singer);
+                $('#current_tags').text($scope.movie.song_info);
+            }
+            player.loadVideoById($scope.movie.video_id);
+        }
+
+        $scope.select = function(id){
+            var index=0;
+            for(var i=0; i<10; i++){
+                if(id==$scope.movies[i].video_id){
+                    index=i;
+                }
+            }
+            console.log(index);
+        }
     
         $scope.play = function() {
         player.playVideo();
@@ -317,6 +420,7 @@
         $scope.pause = function() {
         player.pauseVideo();
         }
+
         $scope.previous = function() {
             if ($scope.index - 1 >= 0) {
                 $scope.index = $scope.index - 1; 

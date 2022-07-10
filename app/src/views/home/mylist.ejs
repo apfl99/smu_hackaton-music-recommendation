@@ -47,33 +47,37 @@
     
     
     <!-- Home & Menu Section Start -->
-    <header id="home" class="home-section">
-        
+    <header id="home">
         <div class="header-top-area">
             <div class="container">
                 <div class="row">
-                
                   <!-- 여기가 로고랑 메뉴 사이 벌리기 클수록 많이 벌어짐-->
                     <div class="col-sm-6">
                         <div class="logo">
-                            <a href="/">Rolling</a>
+                            <!--<a href="/">Rolling</a>-->
+                            <a href="/"><img src="/img/logo.png" style="width: 50px; height:30px"></a>
                         </div>
                     </div>
-                    
                     <div class="col-sm-6">
                         <div class="navigation-menu">
                             <div class="navbar">
                                 <div class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav me-auto">
-                                        <li class="nav-item"><a id="menu" style="color: #E0FB60" href="/">Home <div class="ripple-wrapper"></div></a>
+                                        <li class="nav-item"><a id="menu" style="color: #E0FB60;" href="#home">Home <div class="ripple-wrapper"></div></a>
                                         </li>
-                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #15FFFF;" href="#">MyList</a>
+                                        <li style="display: none;" id="mypage_menu"><a id="menu" style="color: #15FFFF" href="/mylist">MyList</a>
                                         </li>
                                         <li id="login_menu" class="nav-item"><a id="menu" style="color: #E0FB60;" href="login">Login</a>
                                         </li>
                                         <li id="signup_menu"><a id="menu" style="color: #E0FB60;" href="register">Sign up</a>
                                         </li>
                                         <li style="display: none;" id="logout_menu"><a id="menu" style="color: #E0FB60;">Logout</a>
+                                        </li>
+                                        <li>
+                                                <input type="checkbox" id="toggle" checked="off" hidden> 
+                                                    <label for="toggle" class="toggleSwitch" style="border:2px solid #15FFFF">
+                                                        <span class="toggleButton"></span>
+                                                </label>
                                         </li>
                                     </ul>
                                 </div>
@@ -83,6 +87,7 @@
                 </div>
             </div>
         </div>
+    </header>
 
 
     <div style="text-align: center;">
@@ -106,10 +111,26 @@
 
     <div class = "mypage_png">
                 <img class ="disk_png_first" src="/img/disk.png">
-                <img id = "left_list" src="/img/left_list.png">
+                <img id = "left_list" src="/img/left_list.png" onclick="likelist()">
+                <h1 class="mylist_text_lbt">Like</h1>
                 <img class ="disk_png_second" src="/img/disk.png">
-                <img id = "right_list" src="/img/right_list.png">
+                <img id = "right_list" src="/img/right_list.png" onclick="lessviewcount()">
+                <h1 class="mylist_text_rbt">Low Play</h1>
     </div>
+
+    <script>
+        
+
+
+
+        function likelist(){
+        location.href = "likelist";
+        }
+
+        function lessviewcount(){
+            location.href = "lessviewcount";
+        }
+    </script>
 
    
     
@@ -117,10 +138,10 @@
         
     
     
-    <!--  
+    <!—  
     JavaScripts
     =============================================
-    -->
+    —>
     <script src="/lib/jquery/dist/jquery.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/lib/wow/dist/wow.js"></script>
@@ -133,10 +154,10 @@
     <script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
     <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     
-    <!-- All Javascript Plugins  -->
+    <!— All Javascript Plugins  —>
     <script src="js/home/plugins.js"></script>
     
-    <!-- Main Javascript File  -->
+    <!— Main Javascript File  —>
     <script src="js/home/scripts.js"></script>
     <script src="js/home/main.js"></script>
   

@@ -75,7 +75,7 @@ form {
 
 .form-reg {
   width: 420px;
-  height: 700px;
+  height: 710px;
   display: flex;
   background: #000000;
   flex-direction: column;
@@ -91,7 +91,7 @@ form {
 
 .form-login {
   width: 420px;
-  height: 400px;
+  height: 370px;
   display: flex;
   background: #000000;
   flex-direction: column;

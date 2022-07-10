@@ -105,5 +105,42 @@ router.get('/find_pw', function(req, res, next){
 router.post('/login', ctrl.process.login); // 로그인
 router.post('/register',ctrl.process.register); // 회원가입
 
+router.get('/likelist', async function(req, res, next){
+    await db.query('SELECT * FROM Song_list where Song_list.like = 1', async function(err, results){
+       var send_results = [];
+       var j = 0;
+       if(err){
+           console.log(err);
+       }
+
+       // for(var i = 0; i < results.length; i++){
+       //     if(results[i].like){
+       //         send_results[j] = results[i];
+       //         j++ ;
+       //     }
+       // }
+
+       send_results = results;
+       await console.log(send_results);
+       console.log("like--------------------------------------------")
+       res.render("home/home", {results : send_results});
+   });
+});
+router.get('/lessviewcount', function(req, res, next){
+   db.query('SELECT * FROM Song_list', async function(err, results){
+       if(err){
+           console.log(err);
+       }
+       var send_results = results;
+
+       send_results = results.sort(function(a,b){
+           return b.view_count - a.view_count;
+       })
+
+       console.log(send_results);
+       console.log("viewcount");
+       res.render("home/home", {results : send_results});
+   });
+});
 
 module.exports = router;

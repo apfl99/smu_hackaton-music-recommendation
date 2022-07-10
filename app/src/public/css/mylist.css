@@ -20,3 +20,46 @@ background: linear-gradient(to right bottom, #E0FB60, #15FFFF);
 background-clip: text;
 text-fill-color: transparent;
 }
+.mylist_text_lbt {
+    position: absolute;
+width: 138px;
+height: 38px;
+left: 326px;
+top: 450px;
+
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 38px;
+
+/* color */
+
+background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+.mylist_text_rbt {
+    position: absolute;
+    width: 226px;
+    height: 38px;
+    left: 1004px;
+    top: 450px;
+    
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    
+    /* color */
+    
+    background: linear-gradient(107.86deg, #E0FB60 6.96%, #15FFFF 100.34%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    
+}
