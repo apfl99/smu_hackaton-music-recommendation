@@ -1,5 +1,5 @@
 # smu_hackaton
-GDSC Sangmyung 해커톤 : 흔치 않은, 듣기 좋은 노래 추천
+GDSC Sangmyung 해커톤 : 흔치 않은, 듣기 좋은 노래 추천 사이트 
 
 ## Development Environment
 * Node.js v16.14.0
@@ -14,3 +14,5 @@ GDSC Sangmyung 해커톤 : 흔치 않은, 듣기 좋은 노래 추천
 
 2. In mylist, you can select the songs you like and the popular playlist to listen to.
 ![Jul-11-2022 18-22-50](https://user-images.githubusercontent.com/64346003/178232584-7c0b9a71-539a-4618-8b80-71b0cafdc06c.gif)
+
+
